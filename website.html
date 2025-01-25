@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stylish Online Store</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: darkblue;
+            color:#333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background-color:goldenrod;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        header nav ul li a:hover {
+            color: yellow;
+        }
+        /* Filter Section */
+    .filters {
+      display: flex;
+      align-items:center;
+      margin-bottom: 30px;
+      background: darkblue;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .filters label {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .filters select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid black;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+    }
+
+        /* Hero Section */
+        .hero {
+            background: url("composition-black-friday-shopping-cart-with-copy-space_23-2148667046.jpg.avif");
+            padding: 5rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 3rem 0;
+            background-color: #fff;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        .category-list {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+    
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+        }
+
+        .category-item img {
+            width: 150px;
+            border-radius: 8%;
+            margin-bottom: 1rem;
+        }
+
+        .category-item h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            padding: 3rem 0;
+            background-color: #fafafa;
+            text-align: center;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-item h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .product-item .price {
+            font-size: 1.4rem;
+            color: #f0b400;
+            margin: 10px 0;
+        }
+
+        .product-item button {
+            background-color: #f0b400;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .product-item button:hover {
+            background-color: #333;
+        }
+        .checkout {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(135deg, #28a745, #45d56f);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+     
+    }
+
+    .checkout:hover {
+      background: linear-gradient(135deg, #219636, #37c55a);
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 20px;
+    }
+
+    .search-input {
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #007bff;
+    }
+
+    .search-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .search-btn:hover {
+      background-color: #0056b3;
+    }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#cart">Cart (0)</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filters">
+          <label for="categories">Filter by Category:</label>
+          <select id="categories">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home-decor">Home Décor</option>
+
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="search" class="search-input">
+                <button type="submit" class="search-btn">🔍</button>
+          </select>
+        </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Our Stylish Store!</h1>
+        <p>Explore our exclusive collection of top-notch products at amazing prices.</p>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-list">
+            <div class="category-item">
+                <img src="pngtree-creative-3d-render-of-a-rack-overflowing-with-clothes-against-a-image_3749197.jpg" alt="Clothing">
+                <a href="clothing.html">CLOTHING </a> 
+            
+                
+            </div>
+            <div class="category-item">
+                <img src="images.jpeg" alt="Electronics">
+                <a href="electronics.html">ELECTRONICS </a> 
+            </div>
+            <div class="category-item">
+                <img src="premium_photo-1683133958062-12afa652a4fb.jpeg" alt="Home Decors">
+                <a href="HOME.HTML">HOME DECOR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section id="shop" class="product-grid">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <img src="32_400x.jpg.webp" alt="Product 1">
+                <h3>Stylish Shirt</h3>
+                <p class="price">₹999</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item">
+                <img src="Unknown.jpeg" alt="Product 2">
+                <h3>Smartwatch</h3>
+                <p class="price">₹1,299</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item">
+                <img src="Unknown-1.jpeg" alt="Product 3">
+                <h3>Home Speaker</h3>
+                <p class="price">₹2,999</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Cart Section -->
+    <div class="cart">
+        <h3>Your Cart</h3>
+        <p>No items in the cart yet.</p>
+        <a href="#" class="checkout">Proceed to Checkout</a>
+      </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Stylish Online Store. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
